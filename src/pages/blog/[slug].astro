@@ -13,9 +13,9 @@ const b = import.meta.env.BASE_URL;
   <article class="section prose">
     <p class="kicker">{post.data.pubDate.toISOString().slice(0,10)} · {post.data.tags.join(' · ')}</p>
     <h1 class="neon">{post.data.title}</h1>
-    {post.data.subtitle && <p class="paper" dir="auto" style="font-size:1.2rem">{post.data.subtitle}</p>}
+    {post.data.subtitle && <p class="light" dir="auto" style="font-size:1.2rem">{post.data.subtitle}</p>}
     <Content/>
-    <hr style="border-color:#94a3b833;margin:2rem 0"/>
+    <hr style="border-color:#6b7cff33;margin:2rem 0"/>
     <p><a href={b+'blog/'}>← Back to blog</a> · <a href={CHANNEL_URL} target="_blank" rel="noopener">Subscribe on YouTube ⚡</a></p>
   </article>
 </Base>

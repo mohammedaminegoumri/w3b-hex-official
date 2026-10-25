@@ -14,12 +14,12 @@ const path = Astro.url.pathname;
   </nav>
 </header>
 <style>
-.nav{position:sticky;top:0;z-index:50;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:.7rem 1.2rem;background:#09090Bcc;backdrop-filter:blur(10px);border-bottom:1px solid #00e5ff33}
+.nav{position:sticky;top:0;z-index:50;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:.7rem 1.2rem;background:#09090Bcc;backdrop-filter:blur(10px);border-bottom:1px solid #3b82f633}
 .brand{display:flex;align-items:center;gap:.6rem;font-family:'Space Grotesk';font-weight:700;color:#fff;text-decoration:none;letter-spacing:.1em}
-#menu{display:none}.burger{font-size:1.6rem;cursor:pointer;color:var(--cyan)}
+#menu{display:none}.burger{font-size:1.6rem;cursor:pointer;color:var(--blue)}
 nav{display:none;width:100%;flex-direction:column;gap:.8rem;padding:1rem 0}
 #menu:checked~nav{display:flex}
 nav a:not(.btn){color:var(--text);text-decoration:none;font-weight:500}
-nav a.active,nav a:not(.btn):hover{color:var(--cyan);text-shadow:0 0 8px var(--cyan)}
+nav a.active,nav a:not(.btn):hover{color:var(--blue);text-shadow:0 0 8px var(--blue)}
 @media(min-width:768px){.burger{display:none}nav{display:flex;width:auto;flex-direction:row;align-items:center;gap:1.5rem;padding:0}}
 </style>

@@ -1,37 +1,37 @@
-:root{--bg:#09090B;--paper:#f2e8d5;--teal:#2dd4bf;--steel:#94a3b8;--surface:#12121a;--cyan:#00e5ff;--purple:#a855f7;--text:#e0e0e8;--muted:#8a8a9a}
+:root{--bg:#09090B;--light:#e8eaff;--deep:#1e3aff;--glow:#c084fc;--accent:#2563eb;--surface:#0f1020;--blue:#3b82f6;--purple:#a855f7;--text:#e4e6f5;--muted:#8b8fb0}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.65;overflow-x:hidden}
 h1,h2,h3{font-family:'Space Grotesk',sans-serif;line-height:1.2}
-a{color:var(--cyan)}
+a{color:var(--blue)}
 main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 1.2rem}
 .muted{color:var(--muted)}
 .section{padding:3rem 0}
 .section h2{font-size:clamp(1.6rem,4vw,2.2rem)}
-.neon{color:#fff;text-shadow:0 0 6px var(--cyan),0 0 18px var(--cyan),0 0 36px var(--purple)}
-.btn{display:inline-block;padding:.85rem 1.6rem;border-radius:999px;font-weight:700;color:#09090B;background:linear-gradient(90deg,var(--cyan),var(--purple));text-decoration:none;box-shadow:0 0 14px var(--cyan),0 0 30px #a855f766;transition:transform .2s,box-shadow .2s;animation:pulse 2.4s infinite}
-.btn:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 0 22px var(--cyan),0 0 48px var(--purple)}
+.neon{color:#fff;text-shadow:0 0 6px var(--blue),0 0 18px var(--blue),0 0 36px var(--purple)}
+.btn{display:inline-block;padding:.85rem 1.6rem;border-radius:999px;font-weight:700;color:#09090B;background:linear-gradient(90deg,var(--blue),var(--purple));text-decoration:none;box-shadow:0 0 14px var(--blue),0 0 30px #a855f766;transition:transform .2s,box-shadow .2s;animation:pulse 2.4s infinite}
+.btn:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 0 22px var(--blue),0 0 48px var(--purple)}
 .btn.small{padding:.5rem 1.1rem;font-size:.9rem}
-.btn.ghost{background:transparent;color:var(--cyan);border:1px solid var(--cyan);animation:none}
-@keyframes pulse{50%{box-shadow:0 0 22px var(--cyan),0 0 44px var(--purple)}}
+.btn.ghost{background:transparent;color:var(--blue);border:1px solid var(--blue);animation:none}
+@keyframes pulse{50%{box-shadow:0 0 22px var(--blue),0 0 44px var(--purple)}}
 .grid{display:grid;gap:1.4rem;grid-template-columns:1fr}
 @media(min-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:960px){.grid.three{grid-template-columns:repeat(3,1fr)}}
 .card{background:var(--surface);border:1px solid #a855f733;border-radius:16px;padding:1.1rem;transition:border-color .2s,box-shadow .2s}
-.card:hover{border-color:var(--cyan);box-shadow:0 0 20px #00e5ff33}
+.card:hover{border-color:var(--blue);box-shadow:0 0 20px #3b82f633}
 .storm{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
 .cloud{position:absolute;width:60vw;height:40vh;border-radius:50%;filter:blur(60px);opacity:.35;animation:drift 40s ease-in-out infinite alternate}
 .c1{background:radial-gradient(#a855f7,transparent 70%);top:-10vh;left:-15vw}
-.c2{background:radial-gradient(#00e5ff,transparent 70%);top:20vh;right:-20vw;animation-duration:55s;opacity:.18}
-.c3{background:radial-gradient(#3b1d6e,transparent 70%);bottom:-15vh;left:20vw;animation-duration:65s}
+.c2{background:radial-gradient(#3b82f6,transparent 70%);top:20vh;right:-20vw;animation-duration:55s;opacity:.18}
+.c3{background:radial-gradient(#1e3aff,transparent 70%);bottom:-15vh;left:20vw;animation-duration:65s}
 @keyframes drift{to{transform:translate(8vw,4vh) scale(1.15)}}
 .flash{position:absolute;inset:0;background:radial-gradient(circle at 70% 10%,#ffffff22,transparent 50%);opacity:0;animation:flash 9s infinite}
 @keyframes flash{0%,93%,100%{opacity:0}94%{opacity:1}95%{opacity:.2}96%{opacity:.9}97%{opacity:0}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important}}
 .prose{max-width:720px;margin:0 auto}
-.prose h2{color:var(--cyan)}
+.prose h2{color:var(--blue)}
 .prose blockquote{border-left:3px solid var(--purple);margin:1.5rem 0;padding:.5rem 1rem;background:var(--surface);border-radius:0 10px 10px 0}
-.paper{color:var(--paper)}
-.kicker{font-family:'Space Grotesk';text-transform:uppercase;letter-spacing:.2em;font-size:.8rem;color:var(--teal)}
-.card{border-color:#94a3b833}
-.stat{font-family:'Space Grotesk';font-size:2rem;color:var(--paper);font-weight:700}
+.light{color:var(--light)}
+.kicker{font-family:'Space Grotesk';text-transform:uppercase;letter-spacing:.2em;font-size:.8rem;color:var(--glow)}
+.card{border-color:#6b7cff33}
+.stat{font-family:'Space Grotesk';font-size:2rem;color:var(--light);font-weight:700}
