@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import VideoCard from '../components/VideoCard.astro';
+import { videos, VIDEOS_URL, CHANNEL_URL } from '../data/videos';
+---
+<Base title="Videos" description="Latest videos from W3B HEX OFFICIAL.">
+  <section class="section">
+    <p class="kicker">Latest uploads</p>
+    <h1 class="neon">Videos</h1>
+    <p class="muted">Scam alerts, AI news and web stuff, fresh from <a href={CHANNEL_URL} target="_blank" rel="noopener">@w33b_hex</a>.</p>
+    <div class="grid three">{videos.map(v => <VideoCard {...v}/>)}</div>
+    <p style="text-align:center;margin-top:2rem"><a class="btn" href={VIDEOS_URL} target="_blank" rel="noopener">All videos on YouTube →</a></p>
+  </section>
+</Base>

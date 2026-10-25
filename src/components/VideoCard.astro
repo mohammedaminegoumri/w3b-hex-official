@@ -1,0 +1,14 @@
+---
+interface Props { id: string; title: string; date?: string }
+const { id, title, date } = Astro.props;
+---
+<article class="card video">
+  <div class="frame"><iframe src={`https://www.youtube-nocookie.com/embed/${id}`} title={title} loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+  <h3 dir="auto">{title}</h3>
+  {date && <p class="muted">{date}</p>}
+</article>
+<style>
+.frame{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;border:1px solid #00e5ff44}
+iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+h3{font-size:1rem;margin:.8rem 0 .2rem}
+</style>

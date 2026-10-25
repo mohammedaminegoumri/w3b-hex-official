@@ -1,0 +1,13 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('blog')).sort((a,c)=>c.data.pubDate.valueOf()-a.data.pubDate.valueOf());
+---
+<Base title="Blog" description="Scam alerts, awareness tips and web news from W3B HEX.">
+  <section class="section">
+    <p class="kicker">Blog · المدونة</p>
+    <h1 class="neon">Blog</h1>
+    <div class="grid">{posts.map(p => <PostCard id={p.id} {...p.data}/>)}</div>
+  </section>
+</Base>

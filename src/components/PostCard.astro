@@ -1,0 +1,11 @@
+---
+interface Props { id: string; title: string; subtitle?: string; description: string; pubDate: Date }
+const { id, title, subtitle, description, pubDate } = Astro.props;
+---
+<a class="card post" href={`${import.meta.env.BASE_URL}blog/${id}/`}>
+  <p class="kicker">{pubDate.toISOString().slice(0,10)}</p>
+  <h3>{title}</h3>
+  {subtitle && <p class="paper" dir="auto">{subtitle}</p>}
+  <p class="muted">{description}</p>
+</a>
+<style>.post{display:block;text-decoration:none;color:inherit}.post h3{color:#fff;margin:.3rem 0}</style>

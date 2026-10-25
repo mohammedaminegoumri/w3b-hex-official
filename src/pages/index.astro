@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import Logo from '../components/Logo.astro';
+import VideoCard from '../components/VideoCard.astro';
+import PostCard from '../components/PostCard.astro';
+import { videos, CHANNEL_URL } from '../data/videos';
+import { getCollection } from 'astro:content';
+const b = import.meta.env.BASE_URL;
+const posts = (await getCollection('blog')).sort((a,c)=>c.data.pubDate.valueOf()-a.data.pubDate.valueOf()).slice(0,3);
+---
+<Base>
+  <section class="hero">
+    <Logo size={170} class="bolt-in"/>
+    <p class="kicker">Web news · Awareness · Scam alerts</p>
+    <h1 class="neon">W3B HEX OFFICIAL</h1>
+    <p class="tag">The most interesting channel you will click on by mistake. <span class="paper">...plus</span></p>
+    <div class="cta"><a class="btn" href={`${CHANNEL_URL}?sub_confirmation=1`} target="_blank" rel="noopener">⚡ Subscribe on YouTube</a><a class="btn ghost" href={b+'videos/'}>Watch videos</a></div>
+    <p class="muted"><a href={CHANNEL_URL} target="_blank" rel="noopener">youtube.com/@w33b_hex</a></p>
+  </section>
+  <section class="section about card">
+    <p class="kicker">About the channel</p>
+    <h2>Web news, awareness and scam alerts, minus the boring parts.</h2>
+    <p>W3B HEX breaks down what's happening online: AI news, new scams going around WhatsApp and banking apps, safety tips you can use today, and a mix of web content you didn't know you needed. In English and Arabic, with a little Darija.</p>
+    <div class="stats"><div><span class="stat">~140</span><p class="muted">subscribers and growing</p></div><div><span class="stat">8+</span><p class="muted">videos so far</p></div><div><span class="stat">⚡</span><p class="muted">new drops regularly</p></div></div>
+  </section>
+  <section class="section">
+    <h2>Featured <span class="neon">videos</span></h2>
+    <div class="grid three">{videos.slice(0,3).map(v => <VideoCard {...v}/>)}</div>
+    <p><a href={b+'videos/'}>See all videos →</a></p>
+  </section>
+  <section class="section">
+    <h2>From the <span class="neon">blog</span></h2>
+    <div class="grid three">{posts.map(p => <PostCard id={p.id} {...p.data}/>)}</div>
+  </section>
+</Base>
+<style>
+.hero{text-align:center;padding:4rem 0 3rem;display:flex;flex-direction:column;align-items:center;gap:.6rem}
+.hero h1{font-size:clamp(2.4rem,9vw,5rem);margin:.2rem 0;letter-spacing:.04em}
+.tag{font-size:clamp(1.05rem,3vw,1.35rem);max-width:640px}
+.cta{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin:1rem 0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;text-align:center;margin-top:1rem}
+:global(.bolt-in){animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px)}}
+</style>

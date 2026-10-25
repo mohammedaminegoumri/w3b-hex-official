@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import Logo from '../components/Logo.astro';
+import { CHANNEL_URL } from '../data/videos';
+---
+<Base title="About" description="About W3B HEX OFFICIAL and its creator, Mohammed Amine Goumri.">
+  <section class="section prose">
+    <Logo size={110}/>
+    <p class="kicker">About</p>
+    <h1 class="neon">Salam, marhba bik 👋</h1>
+    <h2>The channel</h2>
+    <p><strong>W3B HEX OFFICIAL</strong> is the most interesting channel you will click on by mistake. ...plus. It covers web news, AI updates, scam alerts and awareness, plus all kinds of web content. It's small for now (around 140 subscribers and a handful of videos), but kanzidou b9owa.</p>
+    <h2>The creator</h2>
+    <p>I'm <strong>Mohammed Amine Goumri</strong>, 25, from <strong>El Jadida, Morocco</strong> 🇲🇦. My background is in business management and data science: Power BI, SQL and Python. I'm also into personal branding, photo and video editing, and building AI projects. W3B HEX is where all of that comes together.</p>
+    <h2>The mission</h2>
+    <blockquote dir="auto">الهدف بسيط: نعاونو الناس يفهمو الأنترنت ويبقاو فأمان.<br/>Simple goal: help people understand the internet and stay safe on it.</blockquote>
+    <ul><li><strong>Awareness:</strong> expose scams before they reach your family.</li><li><strong>News:</strong> keep you updated on AI and tech, fast.</li><li><strong>Diverse content:</strong> tutorials, tools and interesting finds.</li></ul>
+    <p><a class="btn" href={`${CHANNEL_URL}?sub_confirmation=1`} target="_blank" rel="noopener">⚡ Join the channel</a></p>
+  </section>
+</Base>

@@ -1,0 +1,21 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+import { CHANNEL_URL } from '../../data/videos';
+export async function getStaticPaths() {
+  return (await getCollection('blog')).map(post => ({ params: { slug: post.id }, props: { post } }));
+}
+const { post } = Astro.props;
+const { Content } = await render(post);
+const b = import.meta.env.BASE_URL;
+---
+<Base title={post.data.title} description={post.data.description}>
+  <article class="section prose">
+    <p class="kicker">{post.data.pubDate.toISOString().slice(0,10)} · {post.data.tags.join(' · ')}</p>
+    <h1 class="neon">{post.data.title}</h1>
+    {post.data.subtitle && <p class="paper" dir="auto" style="font-size:1.2rem">{post.data.subtitle}</p>}
+    <Content/>
+    <hr style="border-color:#94a3b833;margin:2rem 0"/>
+    <p><a href={b+'blog/'}>← Back to blog</a> · <a href={CHANNEL_URL} target="_blank" rel="noopener">Subscribe on YouTube ⚡</a></p>
+  </article>
+</Base>

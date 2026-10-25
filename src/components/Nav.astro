@@ -1,0 +1,25 @@
+---
+import Logo from './Logo.astro';
+import { CHANNEL_URL } from '../data/videos';
+const b = import.meta.env.BASE_URL;
+const links = [['Home',''],['Videos','videos/'],['Blog','blog/'],['About','about/']];
+const path = Astro.url.pathname;
+---
+<header class="nav">
+  <a class="brand" href={b}><Logo size={40}/><span>W3B HEX</span></a>
+  <input id="menu" type="checkbox" aria-label="Toggle menu"/><label for="menu" class="burger">☰</label>
+  <nav>
+    {links.map(([n,h]) => <a href={b+h} class={(h===''? path===b : path.startsWith(b+h)) ? 'active':''}>{n}</a>)}
+    <a class="btn small" href={`${CHANNEL_URL}?sub_confirmation=1`} target="_blank" rel="noopener">⚡ Subscribe</a>
+  </nav>
+</header>
+<style>
+.nav{position:sticky;top:0;z-index:50;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:.7rem 1.2rem;background:#09090Bcc;backdrop-filter:blur(10px);border-bottom:1px solid #00e5ff33}
+.brand{display:flex;align-items:center;gap:.6rem;font-family:'Space Grotesk';font-weight:700;color:#fff;text-decoration:none;letter-spacing:.1em}
+#menu{display:none}.burger{font-size:1.6rem;cursor:pointer;color:var(--cyan)}
+nav{display:none;width:100%;flex-direction:column;gap:.8rem;padding:1rem 0}
+#menu:checked~nav{display:flex}
+nav a:not(.btn){color:var(--text);text-decoration:none;font-weight:500}
+nav a.active,nav a:not(.btn):hover{color:var(--cyan);text-shadow:0 0 8px var(--cyan)}
+@media(min-width:768px){.burger{display:none}nav{display:flex;width:auto;flex-direction:row;align-items:center;gap:1.5rem;padding:0}}
+</style>
